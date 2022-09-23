@@ -10,6 +10,9 @@ body {
 
 * {
   font-family: "Inter", sans-serif;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 code {
@@ -44,45 +47,9 @@ header {
   }
 }
 
-.card {
-  border: 1px solid #f3f3f3;
-  padding: 30px;
-  width: 220px;
-  border-radius: 40px;
-  margin-right: 30px;
-  transition: box-shadow 0.2s ease-in-out ,transform 0.2s ease-in-out ;
 
-  &:hover {
-    box-shadow: 0 14px 30px rgba(0,0,0, 0.06);
-    transform: translateY(-5px);
-  }
 
-  .favorite {
-    position: absolute;
-    cursor: pointer;
-  }
 
-  span {
-    text-transform: uppercase;
-    font-size: 13px;
-    opacity: 0.5;
-  }
-
-  h5 {
-    font-weight: 400;
-    font-size: 14px;
-  }
-}
-
-.button {
-  background: #ffffff;
-  border: 1px solid #f2f2f2;
-  box-sizing: border-box;
-  border-radius: 8px;
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-}
 
 .searchBlock {
   border: 1px solid #f3f3f3;
@@ -96,25 +63,27 @@ header {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0, 0.1);
   z-index: 1;
+  overflow: auto;
 }
 
 .drawer {
   position: absolute;
   width: 420px;
-  height: 100%;
+  height: 100vh;
   right: 0;
   background: #ffffff;
   box-shadow: -10px 4px 24px rgba(0,0,0, 0.1);
   padding: 30px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
   h2 {
     margin: 0;
   }
@@ -123,7 +92,6 @@ header {
 .cart {
   overflow: auto;
   flex: 1;
-  margin-bottom: 40px;
 
   .cartItem {
     border: 1px solid #f3f3f3;
@@ -159,7 +127,7 @@ header {
 }
 
 .cartFooter {
-
+  justify-content: flex-end;
   ul {
     display: block;
     margin-bottom: 40px !important;
